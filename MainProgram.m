@@ -12,15 +12,15 @@ independent_variable = 't';
 generalized_coordinates_and_derivatives = {'q1', 'q1dot', 'q1ddot', 'q2', 'q2dot', 'q2ddot'};
 %-----------------------------USER INPUT-----------------------------------
 
-% Enter the names of time-independent constants in a cell array
+% ENTER: the names of time-independent constants in a cell array
 % example: {'m','l','g','w'}
 user_entered_constants = {'m','l','g','w'};
 
-% Enter the total kinetic energy in terms of q1dot(t), q2dot(t) and constants
+% ENTER: the total kinetic energy in terms of q1dot(t), q2dot(t) and constants
 % example: 'm * l^2 * 1/2 * q1dot(t)^2'
 kinetic_energy_string_time_dependent = 'm * l^2 * 1/2 * q1dot(t)^2';
 
-% Enter the total potential energy in terms of q1(t), q2(t) and constants
+% ENTER: the total potential energy in terms of q1(t), q2(t) and constants
 % example: '-m * l^2 * w^2 * cos(q1(t))'
 potential_energy_string_time_dependent = '-m * l^2 * w^2 * cos(q1(t))';
 
