@@ -48,7 +48,3 @@ This code requires MATLAB's Symbolic Math Toolbox.
 ## Contributions and Feedback
 
 Contributions, bug reports, and feature requests are welcome! Feel free to open an issue or submit a pull request on the GitHub repository.
-
-## License
-
-MIT License 
