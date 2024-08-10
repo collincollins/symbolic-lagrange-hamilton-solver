@@ -3,7 +3,7 @@
 clc;
 close all;
 
-%----------GENERALIZED COORDINATES AND INDEPENDANT VARIABLE-----------------
+%----------GENERALIZED COORDINATES AND INDEPENDENT VARIABLE-----------------
 
 % the independent variable
 independent_variable = 't';
