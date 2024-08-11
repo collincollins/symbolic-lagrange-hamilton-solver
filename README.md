@@ -1,4 +1,4 @@
-# symbolic-two-dof-lagrange-hamilton-solver
+# symbolic-lagrange-hamilton-solver
 
 ## Description
 
