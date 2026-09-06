@@ -1,0 +1,20 @@
+{
+  "name": "symbolic-lagrange-hamilton-solver-js",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A JavaScript port of Collin Collins' symbolic classical-mechanics workflow.",
+  "exports": "./src/solver.mjs",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "build": "node scripts/build.mjs",
+    "example": "node cli.mjs examples/atwood.json"
+  },
+  "dependencies": {
+    "mathjs": "15.2.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  },
+  "license": "MIT"
+}

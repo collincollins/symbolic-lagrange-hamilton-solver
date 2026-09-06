@@ -1,0 +1,98 @@
+{
+  "node": "v23.6.1",
+  "derivationMs": 3676.23125,
+  "pendulumTimeStep": 0.0005208333333333333,
+  "averageIntegrationRuntimeMs": 224.62812378125022,
+  "endpointConfigurations": 32,
+  "worst": {
+    "relativeEnergyDrift": 0.0000018789720054558377,
+    "constants": {
+      "m1": 0.5,
+      "m2": 5,
+      "l1": 0.6,
+      "l2": 0.6,
+      "g": 9.81
+    },
+    "signs": [
+      1,
+      -1
+    ]
+  },
+  "convergence": [
+    {
+      "hz": 960,
+      "errors": [
+        {
+          "time": 1,
+          "angleDistance": 0.00005750493814951577,
+          "velocityDistance": 0.001692016132711424
+        },
+        {
+          "time": 2,
+          "angleDistance": 0.002491940695377359,
+          "velocityDistance": 0.015251960537820727
+        },
+        {
+          "time": 4,
+          "angleDistance": 0.874421896006203,
+          "velocityDistance": 1.5504773480367569
+        },
+        {
+          "time": 8,
+          "angleDistance": 16.322264052175946,
+          "velocityDistance": 18.873583348761407
+        }
+      ]
+    },
+    {
+      "hz": 1920,
+      "errors": [
+        {
+          "time": 1,
+          "angleDistance": 0.0000018678550035733186,
+          "velocityDistance": 0.000054971586585177586
+        },
+        {
+          "time": 2,
+          "angleDistance": 0.00008084133702887427,
+          "velocityDistance": 0.0004939925266593214
+        },
+        {
+          "time": 4,
+          "angleDistance": 0.028710399009520285,
+          "velocityDistance": 0.05385491209823497
+        },
+        {
+          "time": 8,
+          "angleDistance": 2.468802724966967,
+          "velocityDistance": 13.563038801005574
+        }
+      ]
+    },
+    {
+      "hz": 3840,
+      "errors": [
+        {
+          "time": 1,
+          "angleDistance": 5.855990916681846e-8,
+          "velocityDistance": 0.000001724295617748604
+        },
+        {
+          "time": 2,
+          "angleDistance": 0.000002531277480224499,
+          "velocityDistance": 0.000015450915330978455
+        },
+        {
+          "time": 4,
+          "angleDistance": 0.0009001957170305101,
+          "velocityDistance": 0.0016915334809018286
+        },
+        {
+          "time": 8,
+          "angleDistance": 3.0786617549368427,
+          "velocityDistance": 4.675133918087516
+        }
+      ]
+    }
+  ]
+}
