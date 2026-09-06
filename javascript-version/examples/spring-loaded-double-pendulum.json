@@ -1,0 +1,21 @@
+{
+  "kinetic": "(m1+m2)*l1^2*v1^2/2+m2*l2^2*v2^2/2+m2*l1*l2*cos(q1-q2)*v1*v2",
+  "potential": "-(m1+m2)*g*l1*cos(q1)-m2*g*l2*cos(q2)+k1*(sqrt(l1^2+a^2+2*a*l1*sin(q1))-r1)^2/2+k2*(sqrt(l1^2+l2^2+b^2+2*l1*l2*cos(q1-q2)-2*b*(l1*sin(q1)+l2*sin(q2)))-r2)^2/2",
+  "coordinates": [
+    "q1",
+    "q2"
+  ],
+  "constants": [
+    "m1",
+    "m2",
+    "l1",
+    "l2",
+    "g",
+    "k1",
+    "k2",
+    "a",
+    "b",
+    "r1",
+    "r2"
+  ]
+}

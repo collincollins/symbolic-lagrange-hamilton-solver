@@ -1,0 +1,58 @@
+{
+  "id": "spring-loaded-double-pendulum",
+  "name": "Whatever this is...",
+  "description": "A double pendulum with each mass attached to a different wall by a spring.",
+  "constants": {
+    "m1": 1,
+    "m2": 1.5,
+    "l1": 1,
+    "l2": 1.2,
+    "g": 9.81,
+    "k1": 7,
+    "k2": 5,
+    "a": 2.8,
+    "b": 2.8,
+    "r1": 2.2,
+    "r2": 2.5
+  },
+  "q0": [
+    1.9198621771937625,
+    -0.8726646259971648
+  ],
+  "v0": [
+    0,
+    0
+  ],
+  "duration": 20,
+  "dt": 0.0005208333333333333,
+  "coordinates": [
+    "Angle of the first link from vertically downward.",
+    "Angle of the second link from vertically downward, not relative to the first."
+  ],
+  "anchors": {
+    "firstMass": [
+      -2.8,
+      0
+    ],
+    "secondMass": [
+      2.8,
+      0
+    ]
+  },
+  "assumptions": [
+    "Massless rigid links, point masses, and massless ideal springs that may stretch or compress.",
+    "Frictionless pivots; no damping or collisions.",
+    "Fixed anchors lie outside both masses\u2019 reach; springs never have zero length."
+  ],
+  "references": [
+    {
+      "title": "UC Berkeley: double pendulum kinematics and energies",
+      "url": "https://rotations.berkeley.edu/the-double-pendulum/"
+    },
+    {
+      "title": "myPhysicsLab: spring force from stretch",
+      "url": "https://www.myphysicslab.com/springs/double-spring-en.html"
+    }
+  ],
+  "referenceNote": "The combined two-anchor model is our synthesis of standard double-pendulum and Hooke-law models. These sources do not publish this exact combined example."
+}

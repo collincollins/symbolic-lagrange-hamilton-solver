@@ -97,7 +97,7 @@ import { solveSystem, previewSystem } from './dist/solver.mjs';
 
 Run symbolic work in a **Web Worker**, with an external timeout that terminates and replaces the worker. Input limits reduce work but cannot guarantee a worst-case running time for symbolic algebra. Do not run visitor-supplied symbolic work on the UI thread. The browser bundle has no network requests or Node dependencies. `evaluateExpression` interprets a mathematical expression with numeric substitutions and does not compile JavaScript or mutate those substitutions.
 
-Rebuild `dist/solver.mjs` after changing the source. If another repository serves the bundle, copy it from this repository; keep the source and its package lock here as the canonical version.
+Run `npm run build` to rebuild `dist/solver.mjs` and `dist/numeric.mjs` after changing the source. If another repository serves the bundle, copy it from this repository; keep the source and its package lock here as the canonical version.
 
 ## Numerical playback from the derived equations
 
@@ -137,7 +137,7 @@ const acceleration = compileExpression(solved.accelerations[0].expression);
 console.log(acceleration({ m1: 5, m2: 3, g: 9.81 }));
 ```
 
-Numerical code lives in `src/numeric.mjs` and is re-exported by `src/solver.mjs`; both are bundled by the existing build. It changes no symbolic derivation or simplification rules.
+Numerical code lives in `src/numeric.mjs` and is re-exported by `src/solver.mjs`. The build also produces `dist/numeric.mjs`, a standalone browser bundle for evaluating already-derived expressions and integrating trajectories. It has no mathjs dependency and uses the same interpreter and integrator, without changing any symbolic derivation, simplification or integration rules. Keep symbolic derivation in a separate worker; use the numerical bundle when accelerations are already available. The bundle-parity tests compare exact values and complete trajectories against the readable source for all five reference systems.
 
 ## Verification
 
@@ -171,3 +171,9 @@ The first Atwood test was run before `src/solver.mjs` existed and failed with `E
 The regression suite exercises every advertised function with positive, negative and fractional coefficients, nested arguments, explicitly time-dependent velocity-linear terms, and coordinate-dependent inertia. Both Euler–Lagrange and Hamilton equations are compared with independent fourth-order numerical derivatives. Additional regressions cover nested exponentials and radicals, exponential values at ±50, and preservation of original real domains. The original five source-backed fixtures and exact SymPy checks remain in place.
 
 The mathjs [derivative documentation](https://mathjs.org/docs/reference/functions/derivative.html), [real-context simplification documentation](https://mathjs.org/docs/reference/functions/simplify.html) and [AST documentation](https://mathjs.org/docs/expressions/expression_trees.html) describe the symbolic APIs used here. `LICENSE` and `THIRD_PARTY_LICENSES.md` retain the project's and dependencies' notices; the build also includes them in the browser bundle header.
+
+### A double pendulum pulled by two springs
+
+`node cli.mjs examples/spring-loaded-double-pendulum.json` derives the full Lagrangian and Hamiltonian workflow for the article’s “Whatever this is...” example. The matching `-playback.json` file records the initial conditions, fixed geometry, assumptions, and references. There are still only two independent angles; the spring lengths follow from those angles.
+
+This combined model adds Hooke-law forces to the standard double pendulum; the references explain its ingredients, not this exact combined apparatus. Independent tests compare the derived acceleration with Cartesian force projection, recover the zero-stiffness double pendulum, check energy and nonzero spring distances over 20 seconds, and check short-time integration convergence. Long chaotic trajectories remain sensitive to numerical error. Links and springs may cross in the idealized diagram; collisions are not modeled.
